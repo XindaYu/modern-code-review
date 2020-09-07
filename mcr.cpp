@@ -4,18 +4,18 @@ int isWin(char game[3][3]){
 	int win = 0;
 	if (game[0][0] == game[0][1] && game[0][1] == game[0][2] && (game[0][0] == 'X' )) win = 1; 
 	if (game[1][0] == game[1][1] && game[1][1] == game[1][2] && (game[1][0] == 'X' )) win = 1; 
-	if (game[2][0] == game[2][1] && game[2][1] == game[2][2] && (game[2][0] == 'X' )) win = 1; // column
+	if (game[2][0] == game[2][1] && game[2][1] == game[2][2] && (game[2][0] == 'X' )) win = 1;
 	if (game[0][0] == game[1][0] && game[1][0] == game[2][0] && (game[0][0] == 'X' )) win = 1; 
 	if (game[0][1] == game[1][1] && game[1][1] == game[2][1] && (game[0][1] == 'X' )) win = 1; 
-	if (game[0][2] == game[1][2] && game[1][2] == game[2][2] && (game[0][2] == 'X' )) win = 1; // diagonal
+	if (game[0][2] == game[1][2] && game[1][2] == game[2][2] && (game[0][2] == 'X' )) win = 1;
 	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'X' )) win = 1; 
 	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'X' )) win = 1; 
 	if (game[0][0] == game[0][1] && game[0][1] == game[0][2] && ( game[0][0] == 'O')) win = 2; 
 	if (game[1][0] == game[1][1] && game[1][1] == game[1][2] && ( game[1][0] == 'O')) win = 2; 
-	if (game[2][0] == game[2][1] && game[2][1] == game[2][2] && ( game[2][0] == 'O')) win = 2; // column
+	if (game[2][0] == game[2][1] && game[2][1] == game[2][2] && ( game[2][0] == 'O')) win = 2; 
 	if (game[0][0] == game[1][0] && game[1][0] == game[2][0] && ( game[0][0] == 'O')) win = 2; 
 	if (game[0][1] == game[1][1] && game[1][1] == game[2][1] && ( game[0][1] == 'O')) win = 2; 
-	if (game[0][2] == game[1][2] && game[1][2] == game[2][2] && ( game[0][2] == 'O')) win = 2; // diagonal
+	if (game[0][2] == game[1][2] && game[1][2] == game[2][2] && ( game[0][2] == 'O')) win = 2; 
 	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && ( game[0][0] == 'O')) win = 2; 
 	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && ( game[0][2] == 'O')) win = 2; 
    return win;
@@ -26,7 +26,7 @@ int main(){
 //	char player1 = 'X';
 //	char player2 = 'O';
 	bool turn = true; // false for player 1F's turn, true for player 2's turn. Player 1 first.
-//	cout << "X = Player 1" << endl << "O = Player 2" << endl;
+	cout << "X = Player 1" << endl << "O = Player 2" << endl;
 	for (int n=0; n<9; n++){
 		turn = !turn; // use the not-operator to change true to false or false to true.
 		if (turn == false)
