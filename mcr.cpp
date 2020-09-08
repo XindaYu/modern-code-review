@@ -6,7 +6,6 @@ int isWin(char game[3][3]){
 	// game continue
    for(int a=0; a<3; a++){
     for(int b=0; b<3; b++){
-        win = 0;
         if(game[a][b] != 'X' && game[a][b] != 'O') win = 3;
     }
  }
