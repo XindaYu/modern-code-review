@@ -41,7 +41,7 @@ int main(){
 	while (flag)
 	{
 		char game[3][3] = { ' ' };
-		cout << "X = Player 1" << endl << "O = Player 2" << endl;
+		cout << "X = Player 1" << endl << "O = Player 2" << endl <<"input 3 for Tie" << endl;
 		for (int n=0; n<9; n++){
 		turn = !turn; // use the not-operator to change true to false or false to true.
 		if (turn == false)
