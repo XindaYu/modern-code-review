@@ -2,6 +2,15 @@
 using namespace std;
 int isWin(char game[3][3]){
 	int win = 0;
+	
+	// game continue
+   for(int a=0; a<3; a++){
+    for(int b=0; b<3; b++){
+        if(game[a][b] != 'X' && game[a][b] != 'O') win = 3;
+    }
+ }
+	
+	// win 
 	for (int line = 0; line < 3; line++)
 	{
 		if (game[line][0] == game[line][1] && game[line][1] == game[line][2] && (game[line][0] == 'X')) win = 1;
@@ -9,12 +18,18 @@ int isWin(char game[3][3]){
 		if (game[line][0] == game[line][1] && game[line][1] == game[line][2] && (game[line][0] == 'O')) win = 2;
 		if (game[0][line] == game[1][line] && game[1][line] == game[2][line] && (game[0][line] == 'O')) win = 2;
 
-	}
-	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'X')) win = 1;
-	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'X')) win = 1;
-	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'O')) win = 2;
-	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'O')) win = 2;
+	
+    	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'X')) win = 1;
+    	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'X')) win = 1;
+    	if (game[0][0] == game[1][1] && game[1][1] == game[2][2] && (game[0][0] == 'O')) win = 2;
+    	if (game[0][2] == game[1][1] && game[1][1] == game[2][0] && (game[0][2] == 'O')) win = 2;
+ 
+  }
+
+  
+ 
    return win;
+   
 }
 int main(){
 	int i, j;
@@ -57,16 +72,20 @@ int main(){
 						cout << "player 2 Win!" << endl;
 						break; // need to terminate the problem
 					}
+					else if (isWin(game) == 0) {
+					    cout << "Tie!" << endl;
+						break; // need to terminate the problem
+					}
 				}
 			}
 		else{
-			if (i == 3) // all celles with i=0 to 2 have been inputted above but no winner yet
-			{
-				cout << "Tie!" << endl;
-			}
-			else{
+			//if (i == 3) // all celles with i=0 to 2 have been inputted above but no winner yet
+			//{
+			//	cout << "Tie!" << endl;
+			//}
+			//else{
 				cout << "You select the wrong value,so we will start a new game." << endl;
-			}
+			//}
 				turn = true;
 				break;
 		}
